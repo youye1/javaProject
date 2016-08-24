@@ -1,0 +1,129 @@
+<!DOCTYPE web-app PUBLIC
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+    <display-name>Archetype Created Web Application</display-name>
+
+    <!--配置上传文件的保存地址-->
+    <context-param>
+        <param-name>file-upload</param-name>
+        <param-value>E:\JavaWorkSpace\JavaProject\demo\target\fileUpload\</param-value>
+        <description>Location to store upload file</description>
+    </context-param>
+
+
+    <!--Filter测试-->
+    <!--配置filter-->
+    <filter>
+        <filter-name>BaseFilter</filter-name>
+        <filter-class>cn.youye.filter.BaseFilter</filter-class>
+    </filter>
+    <!--映射filter-->
+    <filter-mapping>
+        <filter-name>BaseFilter</filter-name>
+        <!--拦截所有请求-->
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <servlet>
+        <servlet-name>loginAction</servlet-name>
+        <servlet-class>cn.youye.action.LoginAction</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>readCookiesTest</servlet-name>
+        <servlet-class>cn.youye.servlet.ReadCookiesTest</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>cookiesTest</servlet-name>
+        <servlet-class>cn.youye.servlet.CookiesTest</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>sessionTest</servlet-name>
+        <servlet-class>cn.youye.servlet.SessionTest</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>dataBaseAccessTest</servlet-name>
+        <servlet-class>cn.youye.servlet.DataBaseAccessTest</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>fileUploadServletTest</servlet-name>
+        <servlet-class>cn.youye.servlet.FileUploadServletTest</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>fileUploadServletTest</servlet-name>
+        <url-pattern>/servlet/fileUploadServletTest</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>dataBaseAccessTest</servlet-name>
+        <url-pattern>/servlet/dbAccessTest</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>sessionTest</servlet-name>
+        <url-pattern>/servlet/sessionTest</url-pattern>
+    </servlet-mapping>
+
+    <!--servlet映射-->
+    <servlet-mapping>
+        <servlet-name>readCookiesTest</servlet-name>
+        <url-pattern>/servlet/readCookiesTest</url-pattern>
+    </servlet-mapping>
+    <!--servlet映射-->
+    <servlet-mapping>
+        <servlet-name>cookiesTest</servlet-name>
+        <url-pattern>/servlet/cookiesTest</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>loginAction</servlet-name>
+        <url-pattern>/sys/loginAction</url-pattern>
+    </servlet-mapping>
+
+    <!--静态资源-->
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.bmp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.jpg</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.jpeg</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.js</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.css</url-pattern>
+    </servlet-mapping>
+
+
+    <!--session创建后存活时间，以分钟为单位-->
+    <session-config>
+        <session-timeout>1</session-timeout>
+    </session-config>
+
+    <!--异常返回界面-->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/WEB-INF/views/errors/404.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/WEB-INF/views/errors/500.jsp</location>
+    </error-page>
+
+    <!--定义一个通用的错误处理程序-->
+    <error-page>
+        <exception-type>java.lang.Throwable</exception-type>
+        <location>/WEB-INF/views/errors/error.jsp</location>
+    </error-page>
+
+</web-app>
