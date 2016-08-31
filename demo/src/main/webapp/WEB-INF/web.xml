@@ -53,6 +53,24 @@
         <servlet-class>cn.youye.servlet.FileUploadServletTest</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>pageHitCountServletTest</servlet-name>
+        <servlet-class>cn.youye.servlet.PageHitCountServletTest</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>refreshCountServletTest</servlet-name>
+        <servlet-class>cn.youye.servlet.RefreshServletTest</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>refreshCountServletTest</servlet-name>
+        <url-pattern>/servlet/refreshCountTest</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>pageHitCountServletTest</servlet-name>
+        <url-pattern>/servlet/pageHitCountTest</url-pattern>
+    </servlet-mapping>
+
     <servlet-mapping>
         <servlet-name>fileUploadServletTest</servlet-name>
         <url-pattern>/servlet/fileUploadServletTest</url-pattern>

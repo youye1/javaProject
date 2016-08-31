@@ -75,6 +75,20 @@
             <version>${commons-fileupload.version}</version>
         </dependency>
         <!--utils end-->
+
+        <!--统计图工具 start-->
+        <!--<dependency>-->
+            <!--<groupId>org.jfree</groupId>-->
+            <!--<artifactId>jfreechart</artifactId>-->
+            <!--<version>1.0.9</version>-->
+        <!--</dependency>-->
+
+        <dependency>
+            <groupId>org.jfree</groupId>
+            <artifactId>jfreechart</artifactId>
+            <version>1.0.15</version>
+        </dependency>
+        <!--统计图工具 end-->
     </dependencies>
     <build>
         <finalName>demo</finalName>

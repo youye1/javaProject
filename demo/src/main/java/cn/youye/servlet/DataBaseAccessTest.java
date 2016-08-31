@@ -24,8 +24,8 @@ public class DataBaseAccessTest extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 
-        Connection conn=null;
-        Statement statement=null;
+        Connection conn = null;
+        Statement statement = null;
 
         // 设置响应内容类型
         resp.setContentType("text/html;charset=utf-8");
@@ -39,7 +39,6 @@ public class DataBaseAccessTest extends HttpServlet {
                 "<head><title>" + title + "</title></head>\n" +
                 "<body bgcolor=\"#f0f0f0\">\n" +
                 "<h1 align=\"center\">" + title + "</h1>\n");
-
 
 
         try {
@@ -76,20 +75,20 @@ public class DataBaseAccessTest extends HttpServlet {
             e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
-        }catch (Exception e){
+        } catch (Exception e) {
             //处理Class.forName错误
             e.printStackTrace();
-        }finally {
+        } finally {
             //关闭所有资源块
             try {
-                if (statement!=null){
+                if (statement != null) {
                     statement.close();
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
             try {
-                if (conn!=null){
+                if (conn != null) {
                     conn.close();
                 }
             } catch (SQLException e) {
@@ -100,6 +99,6 @@ public class DataBaseAccessTest extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPost(req, resp);
+        doGet(req, resp);
     }
 }

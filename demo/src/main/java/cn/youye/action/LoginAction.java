@@ -39,8 +39,7 @@ public class LoginAction extends HttpServlet {
             resp.setContentType("text/html;charset=utf-8");
             PrintWriter out = resp.getWriter();
             out.print("<h4>请重新输入</h4><br/>");
-//            req.getRequestDispatcher("login.jsp");
-            resp.sendRedirect("login.jsp");
+            req.getRequestDispatcher("login.jsp");
         }
 
     }
